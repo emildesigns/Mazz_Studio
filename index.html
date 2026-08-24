@@ -355,6 +355,7 @@
             opacity: 0.15;
             font-family: 'JetBrains Mono', monospace;
         }
+        .about-visual-mobile { display: none; }
         .about-tag {
             position: absolute;
             bottom: -15px; right: -15px;
@@ -661,6 +662,18 @@
                 gap: 40px;
             }
             .about-visual { display: none; }
+            .about-visual-mobile {
+                display: block;
+                width: 220px;
+                height: 220px;
+                margin: 0 auto 1.5rem;
+            }
+            .about-visual-mobile img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border: 1px solid rgba(139,92,246,0.3);
+            }
 
             .services { padding: 0 5% 80px; }
             .portfolio { padding: 0 5% 80px; }
@@ -767,6 +780,9 @@
         <section class="about">
             <div class="about-text">
                 <h2>Desarrollador con visión<br>de diseñador.</h2>
+                <div class="about-visual-mobile">
+                    <img src="diego-mazzarini.jpg" alt="Diego Mazzarini">
+                </div>
                 <p>Soy Diego Mazzarini, desarrollador web. Ayudo a negocios y profesionales a dejar de depender solo de las redes sociales y tener su propia página web: un espacio profesional, rápido y pensado para generar confianza desde el primer segundo.</p>
                 <p>Cada proyecto arranca desde cero, pensado para el negocio específico del cliente, con el objetivo de que quien te encuentre pueda conocer lo que hacés y contactarte de forma simple y rápida. También me sumo a proyectos ya empezados, adaptándome a lo que ya existe para llevarlo al siguiente nivel.</p>
                 <p>Trabajo especialmente con e-commerce y páginas para negocios y profesionales, combinando código limpio con diseño estratégico. Me ocupo de cada detalle — desde la velocidad de carga hasta la experiencia de usuario — y acompaño el proyecto de principio a fin, para que tengas un sitio que no solo se vea bien, sino que funcione.</p>
