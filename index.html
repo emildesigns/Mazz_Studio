@@ -167,13 +167,27 @@
             color: var(--violet);
             text-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
             margin-bottom: 10px;
-            animation: glitchPulse 4s infinite;
+            display: inline-block;
+            animation: glitchPulse 2.2s infinite, glitchJitter 3.6s ease-in-out infinite;
         }
 
         @keyframes glitchPulse {
-            0%, 94%, 100% { text-shadow: 0 0 40px rgba(139, 92, 246, 0.4); }
-            95% { text-shadow: -3px 0 var(--teal), 3px 0 var(--rec-red), 0 0 40px rgba(139, 92, 246, 0.4); }
-            96% { text-shadow: 3px 0 var(--teal), -3px 0 var(--rec-red), 0 0 40px rgba(139, 92, 246, 0.4); }
+            0%, 27%, 33%, 60%, 66%, 100% { text-shadow: 0 0 40px rgba(139, 92, 246, 0.4); }
+            28% { text-shadow: -3px 0 var(--teal), 3px 0 var(--rec-red), 0 0 40px rgba(139, 92, 246, 0.4); }
+            30% { text-shadow: 3px 0 var(--teal), -3px 0 var(--rec-red), 0 0 40px rgba(139, 92, 246, 0.4); }
+            61% { text-shadow: 4px 0 var(--rec-red), -4px 0 var(--teal), 0 0 55px rgba(139, 92, 246, 0.6); }
+            63% { text-shadow: -2px 0 var(--teal), 2px 0 var(--rec-red), 0 0 25px rgba(139, 92, 246, 0.3); }
+            95% { text-shadow: -3px 0 var(--teal), 3px 0 var(--rec-red), 0 0 60px rgba(139, 92, 246, 0.7); }
+            96% { text-shadow: 3px 0 var(--teal), -3px 0 var(--rec-red), 0 0 20px rgba(139, 92, 246, 0.3); }
+        }
+
+        @keyframes glitchJitter {
+            0%, 100% { transform: translate(0, 0) skew(0deg); }
+            20% { transform: translate(-2px, 1px) skew(-1deg); }
+            35% { transform: translate(2px, -1px) skew(1deg); }
+            50% { transform: translate(0, 0) skew(0deg); }
+            65% { transform: translate(-1px, 2px) skew(-0.6deg); }
+            80% { transform: translate(1px, -2px) skew(0.6deg); }
         }
 
         .hero h1 { font-size: clamp(1.2rem, 4vw, 2.5rem); margin-bottom: 1.5rem; max-width: 950px; line-height: 1.15; text-transform: uppercase; }
@@ -725,7 +739,7 @@
         <section class="hero">
             <div class="glitch-m">M</div>
             <h1>PÁGINAS WEB A TU MEDIDA.<br>CONSTRUIMOS LA VERSIÓN DIGITAL DE TU NEGOCIO.</h1>
-            <p><span class="rec-dot"></span> LIVE // DIEGO EMILIANO MAZZARINI // WEB DEVELOPER</p>
+            <p><span class="rec-dot"></span> DIEGO EMILIANO MAZZARINI // WEB DEVELOPER</p>
             <div class="hero-ctas">
                 <button type="button" class="btn" id="open-wizard-btn">Crear mi sitio web</button>
                 <a href="https://wa.me/5493513938817" target="_blank" class="btn-secondary">
@@ -749,13 +763,10 @@
                 <h3>UI/UX WEB DESIGN</h3>
                 <p>Diseño interfaces modernas, claras y fáciles de usar, pensadas para que tus clientes encuentren lo que buscan y tengan una buena experiencia desde el primer momento.</p>
             </div>
-            <a href="https://ufobikeshop.com.ar/" target="_blank" class="card-link">
-                <div class="card">
-                    <div class="tooltip">ver ejemplo ↗</div>
-                    <h3>WEB DEVELOPMENT</h3>
-                    <p>Desarrollo sitios rápidos, seguros y optimizados para buscadores (SEO). Desde páginas corporativas hasta landing pages, cada proyecto está pensado para funcionar bien en cualquier dispositivo.</p>
-                </div>
-            </a>
+            <div class="card">
+                <h3>WEB DEVELOPMENT</h3>
+                <p>Desarrollo sitios rápidos, seguros y optimizados para buscadores (SEO). Desde páginas corporativas hasta landing pages, cada proyecto está pensado para funcionar bien en cualquier dispositivo.</p>
+            </div>
             <a href="https://ufobikeshop.com.ar/" target="_blank" class="card-link">
                 <div class="card">
                     <div class="tooltip">ver ejemplo ↗</div>
@@ -763,20 +774,14 @@
                     <p>Creo tiendas online completas y fáciles de administrar, con carrito de compras, medios de pago y control de stock. Todo preparado para que puedas vender online de forma simple.</p>
                 </div>
             </a>
-            <a href="https://ufobikeshop.com.ar/" target="_blank" class="card-link">
-                <div class="card">
-                    <div class="tooltip">ver demo ↗</div>
-                    <h3>OPTIMIZATION & CARE</h3>
-                    <p>Me ocupo de que tu sitio siga funcionando rápido y correctamente. Realizo mejoras de rendimiento, actualizaciones y mantenimiento para que no tengas que preocuparte por la parte técnica.</p>
-                </div>
-            </a>
-            <a href="https://ufobikeshop.com.ar/" target="_blank" class="card-link">
-                <div class="card">
-                    <div class="tooltip">ver demo ↗</div>
-                    <h3>AGENTE DE IA</h3>
-                    <p>Sumá un agente de inteligencia artificial a tu sitio web. Puede conocer tu negocio, responder preguntas de tus clientes, recomendar productos o servicios y tomar pedidos o turnos, incluso fuera del horario de atención.</p>
-                </div>
-            </a>
+            <div class="card">
+                <h3>OPTIMIZATION & CARE</h3>
+                <p>Me ocupo de que tu sitio siga funcionando rápido y correctamente. Realizo mejoras de rendimiento, actualizaciones y mantenimiento para que no tengas que preocuparte por la parte técnica.</p>
+            </div>
+            <div class="card">
+                <h3>AGENTE DE IA</h3>
+                <p>Sumá un agente de inteligencia artificial a tu sitio web. Puede conocer tu negocio, responder preguntas de tus clientes, recomendar productos o servicios y tomar pedidos o turnos, incluso fuera del horario de atención.</p>
+            </div>
         </section>
 
         <!-- SOBRE MÍ -->
